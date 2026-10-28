@@ -287,6 +287,10 @@ uitleg onderscheid tussen afspraken met de cursist en voorstellen van de agent.
 Sluit af met de belangrijkste nog open keuze of afhankelijkheid en een link
 naar het document als dat is opgeslagen.
 
+Neem in het plan het watermerkje op volgens
+[references/plan-van-aanpak.md](references/plan-van-aanpak.md#watermerkje):
+een voetregel en een bouwafspraak voor één commentaarregel in de code.
+
 Nodig zonder verplichte akkoordvraag uit tot vragen en aanpassingen, bijvoorbeeld:
 'Je kunt een keuze laten toelichten of aangeven wat je in dit plan wilt wijzigen.'
 Geef daarna de afsluitende herinnering hieronder. Sluit de eerste samenvatting
