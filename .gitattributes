@@ -1,0 +1,11 @@
+# Binaire bestanden nooit als tekst behandelen (geen regeleinde-conversie)
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.xlsx binary
+*.pptx binary
+*.docx binary
+*.zip  binary

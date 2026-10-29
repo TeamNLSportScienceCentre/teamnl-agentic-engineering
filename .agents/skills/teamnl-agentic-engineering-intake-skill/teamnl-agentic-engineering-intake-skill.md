@@ -1,11 +1,11 @@
 ---
-name: teamnl-ae-intake-skill
+name: teamnl-agentic-engineering-intake-skill
 description: Begeleid TeamNL-cursisten met een begrensde korte of uitgebreide intake naar een plan voor een nieuwe repository. Richt je op doel, aanpak, gebruikers, beschikbare bronnen, gegevensbescherming, logging en projectstructuur. Technische uitwerking en bouwen volgen later.
 ---
 
-# TeamNL-AE-Intake-Skill
+# teamnl-agentic-engineering-intake-skill
 
-Begeleid een cursist naar één `PLAN_VAN_AANPAK.md` voor een nieuwe repository
+Begeleid een cursist naar één `plan-van-aanpak.md` voor een nieuwe repository
 en een compacte, begrijpelijke samenvatting van het plan in het agentgesprek.
 Gebruik zakelijk, begrijpelijk Nederlands. Dit is een intake op hoofdlijnen.
 Verhelder het plan achter het vraagstuk: waarom het nodig is, wat moet verbeteren,
@@ -23,6 +23,22 @@ intake met meer aandacht voor keuzes en projectinrichting?**
 
 Stel in die beurt nog geen casusvraag. Sla de keuzevraag over als de variant
 al gekozen is. Gebruik eerder gegeven casusinformatie; begin niet opnieuw.
+
+## Keuzevragen met knoppen
+
+Stel echte keuzevragen met de keuzetool van de agent, als die beschikbaar is:
+`AskUserQuestion` in Claude Code, `request_user_input` in Codex. Geef
+twee tot vier korte opties met een uitleg van één zin; de cursist kan altijd
+zelf iets anders antwoorden. Gebruik dit alleen voor:
+
+- de intakevariant: Kort of Uitgebreid;
+- de repository-indeling in thema 8: standaardindeling of eigen voorkeur;
+- de optionele verdiepingsronde: wel of geen tien vervolgvragen.
+
+Stel alle andere intakevragen als open tekst, zodat de cursist uitgebreid kan
+antwoorden. Verzin geen antwoordopties voor open vragen. Is er geen keuzetool,
+of meldt de tool dat die niet beschikbaar is, stel dezelfde vraag dan gewoon in
+tekst. Een vraag via de keuzetool telt even zwaar mee als een vraag in tekst.
 
 ## Vraaglimieten en gespreksafspraken
 
@@ -143,8 +159,17 @@ toegang of data te testen tijdens deze intake.
 Breng gevoeligheid en bescherming samen in één brede vraag. Denk aan persoonlijke
 of vertrouwelijke informatie, opslag, toegang en wat GitHub of de agent mag zien.
 
-Voorbeeld: **Welke gegevens vragen bescherming, en welke afspraken gelden voor
-opslag, toegang en wat in GitHub of bij de AI-agent terecht mag komen?**
+Voorbeeld: **Wie bepaalt wat je met de gegevens mag, en welke afspraken gelden
+voor opslag, verwerking en wat GitHub of de AI-agent mag zien?**
+
+Leg per bron vast wie de data-eigenaar of bevoegde beslisser is, wat die heeft
+toegestaan en wat nog onbekend is. Onderscheid wat de agent mag lezen van wat
+code lokaal mag verwerken, wie die code uitvoert en welke output terug mag
+naar het model. Kies bij onbekende toestemming voor fictieve data.
+Neem in het plan een invulbaar blok voor het toekomstige AGENTS.md op volgens
+[references/data-access.md](references/data-access.md), inclusief verboden paden
+en de nog te controleren technische deny-regels per gebruikte agent.
+Dit blijft onderdeel van thema 4, zonder extra vragen buiten de limiet.
 
 Neem bestaande antwoorden over. Ontbrekende niet-essentiële maatregelen worden
 voorstellen; onbekende toestemming of gevoeligheid blijft een voorwaarde vóór
@@ -195,18 +220,28 @@ resultaat van belangrijke verwerkingen voor, met tijdstip, component en status.
 Uitgebreid verdiep je alleen een relevante beheerkeuze binnen de vraaglimiet.
 
 Neem `logs/` op in ieder repositoryvoorstel, ook bij een eigen indeling.
-Gebruik de benodigde onderdelen van `logs/runtime/`, `logs/test/` en
-`logs/agent-sessions/`, met `logs/README.md` voor de afspraken. Ruwe runtime- en
+Gebruik `logs/runtime/` en `logs/test/` voor de benodigde ruwe logs, met
+`logs/README.md` voor de afspraken. Geschoonde sessieverslagen staan in
+`docs/handoffs/`. Ruwe runtime- en
 testlogs blijven buiten Git; ontwikkelverslagen zijn beknopt en geschoond.
 Geen secrets, persoonsgegevens of volledige bronbestanden in logs, ook niet
 in foutmeldingen. Als runtime-logging niet gewenst is, noteer die keuze en
-behoud `logs/` voor afgesproken ontwikkelverslagen.
+behoud `logs/` voor eventuele uitvoerlogs; ontwikkelverslagen staan in `docs/handoffs/`.
 
 ### 8. Repository-inrichting en overdracht
 
 Voorbeeld: **Welke afspraken of voorkeuren heb je voor de indeling en het
 beheer van de repository, bijvoorbeeld voor code, documenten, agentinstructies
 en bronnen?**
+
+Stel op basis van de bekende casus een repositorynaam voor volgens
+`doelgroep-doel-specifiek`: kleine letters en streepjes, doelgroep vooraan,
+specifiek alleen wanneer nuttig. Voorbeeld: `wsv-data-mining-koffiepauze`.
+Neem een bekende teamafkorting over; markeer een onbekende doelgroep als open
+punt. De naam is een voorstel en geen toestemming om een repo aan te maken.
+Gebruik `plan-van-aanpak.md` en andere eigen documenten in kleine letters met
+streepjes. Behoud vaste herkenningsnamen zoals `AGENTS.md`, `CLAUDE.md`,
+`README.md` en `SKILL.md`; Python-modules gebruiken underscores.
 
 Bij geen voorkeur gebruik je
 [references/repository-structuur.md](references/repository-structuur.md)
@@ -236,7 +271,7 @@ geverifieerd alleen omdat de cursist toegang heeft.
 
 Lever het plan op twee niveaus op:
 
-1. **Handout:** het volledige `PLAN_VAN_AANPAK.md`, als overdracht en naslag.
+1. **Handout:** het volledige `plan-van-aanpak.md`, als overdracht en naslag.
 2. **Samenvatting in het agentgesprek:** laat de cursist het plan direct in de
    agentomgeving lezen, ook als er al een bestand is gemaakt. Een downloadlink
    of melding dat het document klaarstaat is niet voldoende.
@@ -254,16 +289,34 @@ naar het document als dat is opgeslagen.
 
 Nodig zonder verplichte akkoordvraag uit tot vragen en aanpassingen, bijvoorbeeld:
 'Je kunt een keuze laten toelichten of aangeven wat je in dit plan wilt wijzigen.'
-Sluit de eerste samenvatting daarna af met de keuze voor de optionele
-verdiepingsronde hieronder. Start die alleen als de cursist daarvoor kiest.
+Geef daarna de afsluitende herinnering hieronder. Sluit de eerste samenvatting
+af met de keuze voor de optionele verdiepingsronde. Start die alleen als de
+cursist daarvoor kiest.
 Als de cursist losse feedback geeft, pas het plan en de samenvatting samen aan.
 Hergebruik de intake; start die niet opnieuw en presenteer een voorstel niet
 stilzwijgend als akkoord. Start niet met bouwen.
 
-Schrijf als bestand alleen `PLAN_VAN_AANPAK.md` op de afgesproken locatie. Is die onbekend,
+Schrijf als bestand alleen `plan-van-aanpak.md` op de afgesproken locatie. Is die onbekend,
 vraag er alleen naar als thema 8 nog vraagruimte heeft; bij geen bestemming,
 geen vraagruimte of expliciete afronding geef je de Markdown in de chat. Schrijf een nieuwe casus
 niet automatisch in de cursusrepo en overschrijf geen ander projectplan.
+
+### Afsluitende herinnering
+
+Herinner de cursist bij de eerste oplevering, buiten de woordgrens van de
+samenvatting, kort aan drie stappen voordat er gebouwd wordt:
+
+1. **Zelf bestuderen:** lees het hele plan kritisch. Het is een voorstel van de
+   agent op basis van het gesprek; de cursist blijft verantwoordelijk.
+2. **Second opinion:** laat het plan bij voorkeur beoordelen door een collega,
+   begeleider of andere AI-agent, en verwerk de opmerkingen.
+3. **Agents naar het plan verwijzen:** zorg dat coding agents het plan
+   gebruiken, bijvoorbeeld door in `AGENTS.md` of `CLAUDE.md` van de nieuwe
+   repository naar `plan-van-aanpak.md` te verwijzen. In `CLAUDE.md` kan dat met
+   de regel `@AGENTS.md` of `@plan-van-aanpak.md`.
+
+Pas deze bestanden niet zelf aan tijdens de intake. Herhaal de herinnering na
+de verdiepingsronde in één zin.
 
 ### Optionele verdieping na de samenvatting
 
@@ -290,8 +343,8 @@ plan aan te scherpen? Ik stel ze één voor één.**
   gevoelige gegevens en de grens tussen plannen en bouwen blijven gelden.
 - Verwerk na tien antwoorden, of wanneer de cursist de vragen eerder wil
   afronden, de ontvangen inhoud in hetzelfde plan en geef een vernieuwde compacte
-  samenvatting. Leg gewijzigde keuzes en hun redenen uit; onzekerheden blijven
-  open punten. Een tussentijdse vraag of correctie van de cursist mag direct
+  samenvatting met de herinnering in één zin. Leg gewijzigde keuzes en hun
+  redenen uit; onzekerheden blijven open punten. Een tussentijdse vraag of correctie van de cursist mag direct
   worden verwerkt zonder de teller voor vragen van de agent te veranderen.
   Bij een verzoek om alle werkzaamheden te stoppen, stop je ook het bijwerken.
 - Bied na deze ronde niet automatisch opnieuw tien vragen aan en begin niet
