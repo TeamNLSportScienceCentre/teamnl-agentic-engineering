@@ -9,6 +9,7 @@
 # Lokale en gegenereerde bestanden
 .DS_Store
 Thumbs.db
+~$*.xlsx
 node_modules/
 logs/runtime/
 logs/test/
@@ -23,3 +24,4 @@ media/private/
 Secret.txt
 secrets.txt
 secret.txt
+deelnemers/sessie-1a-30okt/geheimpje.xlsx
