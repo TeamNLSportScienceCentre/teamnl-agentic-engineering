@@ -20,4 +20,4 @@ data/private/
 media/private/
 
 # secrets
-secrets.txt
+Secret.txt
