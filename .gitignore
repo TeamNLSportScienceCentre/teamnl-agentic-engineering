@@ -9,7 +9,7 @@
 # Lokale en gegenereerde bestanden
 .DS_Store
 Thumbs.db
-~$*.xlsx
+~$*
 node_modules/
 logs/runtime/
 logs/test/

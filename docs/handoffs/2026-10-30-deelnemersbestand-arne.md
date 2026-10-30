@@ -1,1 +1,0 @@
-﻿Leeg deelnemersbestand aangemaakt in deelnemers/sessie-1a-30okt/ met de expliciet gevraagde bestandsnaam ArneHendriks1987.txt. Controle: bestand bestaat; alle 7 Node-tests geslaagd. Geen browsercontrole uitgevoerd: alleen een tekstbestand toegevoegd, geen appwijzigingen.
