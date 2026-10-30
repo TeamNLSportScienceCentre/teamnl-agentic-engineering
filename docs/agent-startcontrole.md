@@ -23,8 +23,9 @@ die uiteen kunnen lopen. Herstart de agentsessie na het hernoemen van een skill.
 
 1. Start de agent vanuit de repositoryroot en controleer of de skill zichtbaar is.
 2. Gebruik het bovenstaande gesprekcommando. De eerste reactie vraagt Kort of
-   Uitgebreid, met knoppen als beschikbaar en anders als tekst.
-3. Kies Kort en gebruik een fictieve casus: een dashboard voor een verzonnen
+   Uitgebreid en Nieuwe of Bestaande repository, met knoppen als beschikbaar en
+   anders als tekst.
+3. Kies Kort en Nieuwe repository en gebruik een fictieve casus: een dashboard voor een verzonnen
    sportteam, zonder echte data. De agent stelt per beurt één samenhangende vraag.
 4. Controleer dat de data-eigenaar en lees-/verwerkingsrechten binnen thema 4
    aan bod komen, zonder de vraaglimieten te overschrijden.
@@ -33,6 +34,9 @@ die uiteen kunnen lopen. Herstart de agentsessie na het hernoemen van een skill.
    afgesproken plek, met het AGENTS.md-voorstel en nog te verifiëren deny-regels.
 6. Controleer de samenvatting, afsluitende herinnering en optionele verdieping.
    Er worden geen app, repository of instellingen aangemaakt tijdens de intake.
+7. Herhaal met Bestaande repository en een fictieve oefenrepo. Het plan
+   beschrijft de huidige staat en de agent-ready-stappen; de oefenrepo blijft
+   ongewijzigd.
 
 ## Uitgevoerde controle op 16 oktober 2026
 

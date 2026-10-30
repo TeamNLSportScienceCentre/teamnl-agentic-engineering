@@ -131,6 +131,12 @@ verduidelijkingsvraag. Uitgebreid stelt maximaal drie vragen per thema. Dat zijn
 bovengrenzen; reeds beantwoorde onderwerpen worden overgeslagen. Per beurt volgt
 één samenhangende vraag die ruimte geeft voor een uitgebreider antwoord.
 
+In dezelfde eerste beurt kies je of je met een **nieuwe repository** begint of
+verder bouwt op een **bestaande repository**. Bij een nieuwe repository dient
+eerder werk als referentie, via een link in het plan of later in `archive/`. Bij
+een bestaande repository beschrijft het plan de huidige staat en de stappen om
+die agent-ready te maken; de intake wijzigt de repository zelf niet.
+
 Het gesprek gaat over het plan achter de casus: doel, aanpak, betrokkenen, eerste
 bruikbare stap en projectinrichting. De acht vaste thema's zijn casus,
 gebruikers, bronnen, gegevensbescherming, hergebruik, eerste versie, logging en
@@ -152,7 +158,7 @@ plan en een vernieuwde samenvatting; eerder stoppen met de vragen kan ook.
 Je kunt ook losse vragen stellen of wijzigingen doorgeven; het plan wordt dan aangepast.
 Bestudeer het plan daarna zelf, vraag bij voorkeur een second opinion en verwijs
 je coding agents ernaar, bijvoorbeeld via `AGENTS.md` of `CLAUDE.md`.
-Tijdens deze intake worden geen applicatie of repository aangemaakt.
+Tijdens deze intake worden geen applicatie of repository aangemaakt of gewijzigd.
 
 Bekijk de [skillinstructies](.agents/skills/teamnl-agentic-engineering-intake-skill/teamnl-agentic-engineering-intake-skill.md).
 `SKILL.md` is het startbestand dat naar deze instructies verwijst.
