@@ -7,7 +7,7 @@ Naast de oefenapp bevat deze repository de zelfstandige intake-skill in
 referenties daar, los van applicatiecode in `src/`. Codex en Mistral Vibe lezen
 die map direct; `.claude/skills/teamnl-agentic-engineering-intake-skill/SKILL.md` is alleen een
 verwijzing voor Claude Code met dezelfde naam en beschrijving. De skill begeleidt uitsluitend
-een intake tot een plan voor een nieuwe repository. Pas de onderstaande
+een intake tot een plan voor een nieuwe of bestaande repository. Pas de onderstaande
 browserapp-eisen niet toe op projecten van cursisten: hun eisen volgen uit
 de eigen casus. Het aanroepen van de intake is geen opdracht om de app te bouwen.
 

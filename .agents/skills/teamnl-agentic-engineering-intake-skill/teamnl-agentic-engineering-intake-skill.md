@@ -1,12 +1,13 @@
 ---
 name: teamnl-agentic-engineering-intake-skill
-description: Begeleid TeamNL-cursisten met een begrensde korte of uitgebreide intake naar een plan voor een nieuwe repository. Richt je op doel, aanpak, gebruikers, beschikbare bronnen, gegevensbescherming, logging en projectstructuur. Technische uitwerking en bouwen volgen later.
+description: Begeleid TeamNL-cursisten met een begrensde korte of uitgebreide intake naar een plan voor een nieuwe of bestaande repository. Richt je op doel, aanpak, gebruikers, beschikbare bronnen, gegevensbescherming, logging en projectstructuur; bij een bestaande repository ook op de huidige staat en de stappen om die agent-ready te maken. Technische uitwerking en bouwen volgen later.
 ---
 
 # teamnl-agentic-engineering-intake-skill
 
 Begeleid een cursist naar één `plan-van-aanpak.md` voor een nieuwe repository
-en een compacte, begrijpelijke samenvatting van het plan in het agentgesprek.
+of een bestaande repository die verder wordt ontwikkeld, en een compacte,
+begrijpelijke samenvatting van het plan in het agentgesprek.
 Gebruik zakelijk, begrijpelijk Nederlands. Dit is een intake op hoofdlijnen.
 Verhelder het plan achter het vraagstuk: waarom het nodig is, wat moet verbeteren,
 welke aanpak de cursist voor ogen heeft, wie betrokken zijn, wat de eerste
@@ -14,15 +15,29 @@ bruikbare stap is en hoe het project wordt ingericht. Stuur op die samenhang.
 De agent zoekt technische details later uit aan de hand van beschikbaar materiaal.
 Deze skill werkt zelfstandig.
 
-## Start en intakevariant
+## Start: intakevariant en startsituatie
 
-Vraag bij een nieuwe intake eerst:
+Stel bij een nieuwe intake eerst, in één beurt, deze twee keuzevragen:
 
-**Wil je een korte intake voor snel een bruikbaar plan, of een uitgebreide
-intake met meer aandacht voor keuzes en projectinrichting?**
+1. **Wil je een korte intake voor snel een bruikbaar plan, of een uitgebreide
+   intake met meer aandacht voor keuzes en projectinrichting?**
+2. **Begin je met een nieuwe repository of bouw je verder op een bestaande
+   repository?**
 
-Stel in die beurt nog geen casusvraag. Sla de keuzevraag over als de variant
-al gekozen is. Gebruik eerder gegeven casusinformatie; begin niet opnieuw.
+Stel in die beurt nog geen casusvraag. Sla een keuzevraag over als het antwoord
+al bekend is. Gebruik eerder gegeven casusinformatie; begin niet opnieuw.
+
+- **Nieuwe repository:** het plan beschrijft een nieuwe repository. Bestaande
+  code of werk in uitvoering dient als referentie, niet als fundament: via een
+  link of locatie in het plan, of als voorstel om het bij de bouw in `archive/`
+  te zetten. Dit is de eenvoudigste start; noem deze optie als eerste.
+- **Bestaande repository:** het plan beschrijft de huidige staat van die
+  repository en de stappen om haar agent-ready te maken, vóór de aanpak voor de
+  volgende versie. Agent-ready betekent: een coding agent kan er gericht en
+  veilig in werken, met werkafspraken in `AGENTS.md`, een bruikbare README,
+  afgeschermde secrets en data, een herkenbare structuur en een controle die
+  laat zien dat bestaand gedrag blijft werken. De intake wijzigt, kloont of
+  migreert de repository niet.
 
 ## Keuzevragen met knoppen
 
@@ -32,8 +47,13 @@ twee tot vier korte opties met een uitleg van één zin; de cursist kan altijd
 zelf iets anders antwoorden. Gebruik dit alleen voor:
 
 - de intakevariant: Kort of Uitgebreid;
-- de repository-indeling in thema 8: standaardindeling of eigen voorkeur;
+- de startsituatie: Nieuwe repository of Bestaande repository;
+- de repository-indeling in thema 8: standaardindeling of eigen voorkeur; bij
+  een bestaande repository: huidige indeling aanvullen of naar de standaardindeling;
 - de optionele verdiepingsronde: wel of geen tien vervolgvragen.
+
+Stel de twee startkeuzes samen in één aanroep van de keuzetool als die meerdere
+vragen tegelijk ondersteunt, anders na elkaar zonder tussenliggende casusvraag.
 
 Stel alle andere intakevragen als open tekst, zodat de cursist uitgebreid kan
 antwoorden. Verzin geen antwoordopties voor open vragen. Is er geen keuzetool,
@@ -59,8 +79,9 @@ wat bekend is, welke vragen al zijn gesteld en wat nog openstaat.
 - Elke vervolg-, bevestigings-, locatie- of toestemmingsvraag telt mee bij het
   bijbehorende thema. Hernoem of splits thema's niet om extra vragen te stellen;
   verplaats technische detailvragen niet naar een later thema.
-- Binnen de basisintake staat alleen de eenmalige variantkeuze buiten de
-  themalimieten. De bestemming van het plan valt onder thema 8 en telt daar mee.
+- Binnen de basisintake staan alleen de eenmalige startkeuzes, intakevariant
+  en startsituatie, buiten de themalimieten. De bestemming van het plan valt
+  onder thema 8 en telt daar mee.
   Lever eerst het plan en de samenvatting op. Daarna mag de cursist kiezen voor
   de afzonderlijke verdiepingsronde hieronder; die geeft geen extra vraagruimte
   tijdens de basisintake.
@@ -74,6 +95,7 @@ wat bekend is, welke vragen al zijn gesteld en wat nog openstaat.
   toestemming of bescherming wordt geen betreffende data geopend of gebruikt.
 - Wisselen tussen kort en uitgebreid verandert de limiet, niet de al gebruikte
   aantallen. Bij terugkeer naar een thema tellen eerdere vragen nog steeds mee.
+  Een gewijzigde startsituatie verandert het plan, niet de al gebruikte aantallen.
 - Bij expliciet stoppen of afronden stel je geen nieuwe intakevraag. Lever bij
   een afgebroken basisintake alleen een concept als daarom wordt gevraagd;
   bij feedback op de skill werk je de skill bij. Start de casus niet als bouwproject.
@@ -192,6 +214,18 @@ Nog te ontvangen code is een afhankelijkheid, geen bewezen herbruikbare basis.
 Lees alleen gericht aangewezen documentatie met passende toestemming. Clone,
 kopieer, migreer of draai geen legacycode als onderdeel van de intake.
 
+Bij een nieuwe repository is bestaande code referentiemateriaal: noteer de link
+of locatie en of `archive/` bij de bouw een passende plek is.
+
+Bij een bestaande repository breng je in dit thema de huidige staat in kaart.
+Voorbeeld: **Waar staat de bestaande repository, wat werkt er al en wat loopt
+nog niet goed? Mag de agent de mappenstructuur en documentatie bekijken?**
+Bekijk met toestemming alleen de mappenstructuur en documentatie zoals
+`README.md`, `AGENTS.md` of `CLAUDE.md` en `.gitignore`. Open geen data, `.env`,
+logs of andere mogelijk gevoelige bestanden, voer geen code uit en wijzig niets.
+Een controle op secrets of gevoelige data in de Git-geschiedenis is een stap in
+het plan, geen intakeactie.
+
 ### 6. Aanpak, eerste versie en belangrijkste voorwaarden
 
 Leid versie 1 af uit eerder genoemde behoeften. Vraag alleen naar echte keuzes
@@ -234,8 +268,8 @@ Voorbeeld: **Welke afspraken of voorkeuren heb je voor de indeling en het
 beheer van de repository, bijvoorbeeld voor code, documenten, agentinstructies
 en bronnen?**
 
-Stel op basis van de bekende casus een repositorynaam voor volgens
-`doelgroep-doel-specifiek`: kleine letters en streepjes, doelgroep vooraan,
+Stel bij een nieuwe repository op basis van de bekende casus een repositorynaam
+voor volgens `doelgroep-doel-specifiek`: kleine letters en streepjes, doelgroep vooraan,
 specifiek alleen wanneer nuttig. Voorbeeld: `wsv-data-mining-koffiepauze`.
 Neem een bekende teamafkorting over; markeer een onbekende doelgroep als open
 punt. De naam is een voorstel en geen toestemming om een repo aan te maken.
@@ -250,6 +284,13 @@ Neem genoemde voorkeuren over en houd de inrichting passend bij versie 1.
 Documentatie, Git-werkwijze, overdraagbaarheid en eventuele deployment kunnen
 binnen dit thema worden besproken als ze nog bepalende open keuzes bevatten.
 Introduceer daarvoor geen aparte thema's of verplichte vragen.
+
+Bij een bestaande repository behoud je de huidige naam; noem een naam volgens
+`doelgroep-doel-specifiek` alleen als de cursist wil hernoemen. Gebruik
+[references/repository-structuur.md](references/repository-structuur.md#bestaande-repository-agent-ready-maken)
+als controlelijst: geef de huidige en beoogde boomstructuur met `logs/`, wat
+ontbreekt om agent-ready te zijn en de stappen in volgorde. Stel geen
+herindeling van werkende code voor zonder reden.
 
 ## Plan en einde van de intake
 
@@ -287,6 +328,10 @@ uitleg onderscheid tussen afspraken met de cursist en voorstellen van de agent.
 Sluit af met de belangrijkste nog open keuze of afhankelijkheid en een link
 naar het document als dat is opgeslagen.
 
+Neem in het plan het watermerkje op volgens
+[references/plan-van-aanpak.md](references/plan-van-aanpak.md#watermerkje):
+een voetregel en een bouwafspraak voor één commentaarregel in de code.
+
 Nodig zonder verplichte akkoordvraag uit tot vragen en aanpassingen, bijvoorbeeld:
 'Je kunt een keuze laten toelichten of aangeven wat je in dit plan wilt wijzigen.'
 Geef daarna de afsluitende herinnering hieronder. Sluit de eerste samenvatting
@@ -311,8 +356,8 @@ samenvatting, kort aan drie stappen voordat er gebouwd wordt:
 2. **Second opinion:** laat het plan bij voorkeur beoordelen door een collega,
    begeleider of andere AI-agent, en verwerk de opmerkingen.
 3. **Agents naar het plan verwijzen:** zorg dat coding agents het plan
-   gebruiken, bijvoorbeeld door in `AGENTS.md` of `CLAUDE.md` van de nieuwe
-   repository naar `plan-van-aanpak.md` te verwijzen. In `CLAUDE.md` kan dat met
+   gebruiken, bijvoorbeeld door in `AGENTS.md` of `CLAUDE.md` van de nieuwe of
+   bestaande repository naar `plan-van-aanpak.md` te verwijzen. In `CLAUDE.md` kan dat met
    de regel `@AGENTS.md` of `@plan-van-aanpak.md`.
 
 Pas deze bestanden niet zelf aan tijdens de intake. Herhaal de herinnering na
@@ -351,6 +396,7 @@ plan aan te scherpen? Ik stel ze één voor één.**
   met bouwen. De cursist kan zelf verdere vragen of wijzigingen doorgeven.
 
 Maak geen applicatie, projectstructuur, installatie, account, commit, push of
-deployment tijdens de intake of verdiepingsronde. Mappen en configuratie komen
+deployment tijdens de intake of verdiepingsronde, en wijzig geen bestaande
+repository. Mappen, configuratie en agent-ready-stappen komen
 als voorstel in het plan. Wacht na de oplevering op de keuze voor verdieping,
 vragen, wijzigingen of een afzonderlijke vervolgopdracht.

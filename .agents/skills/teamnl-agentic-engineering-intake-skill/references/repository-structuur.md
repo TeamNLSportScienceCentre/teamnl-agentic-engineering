@@ -60,6 +60,7 @@ testlogs niet. Log nooit credentials, persoonsgegevens of volledige brondata.
 | `media/example/` | Deelbare voorbeeldmedia kleiner dan 1 MB per bestand, alleen met gebruiksrecht. |
 | `media/private/` | Lokale of vertrouwelijke media, buiten Git. |
 | `logs/runtime/` en `logs/test/` | Lokale uitvoerlogs, buiten Git; nooit secrets of ruwe persoonsrecords. |
+| `archive/` | Eerder werk als referentie, niet als fundament; alleen deelbare code zonder secrets of data in Git, anders een link in het plan. |
 | `output/` | Gegenereerde resultaten, standaard buiten Git. |
 | `tmp/` | Tijdelijke bestanden, buiten Git. |
 | `scripts/` | Projectgebonden hulpscripts. |
@@ -99,3 +100,28 @@ Leg ook vast dat reeds getrackte bestanden niet vanzelf worden genegeerd.
 Voorgestelde checks zijn bijvoorbeeld `git status` en `git check-ignore .env`;
 de intake voert die niet uit. Geschoonde agentverslagen en fictieve voorbeelden
 mogen in Git, mits het databeleid van de casus dat toestaat.
+
+## Bestaande repository agent-ready maken
+
+Bij een bestaande repository is de compacte basis hierboven een controlelijst,
+geen nieuwe indeling. Beschrijf de huidige staat en stel alleen de ontbrekende
+stappen voor, in deze volgorde. De intake voert ze niet uit; bij de bouw volgt
+bij voorkeur één kleine commit per stap op een aparte branch.
+
+1. **Secrets en data:** controleer of secrets, `.env`-bestanden of gevoelige
+   data in de repository of de Git-geschiedenis staan, bijvoorbeeld met een
+   secretscan. Verplaats echte data naar `data/private/` of goedgekeurde opslag;
+   negeren haalt bestaande commits niet weg.
+2. **`.gitignore`:** vul aan met de basis hierboven en controleer reeds
+   getrackte bestanden.
+3. **`AGENTS.md`:** werkafspraken, een verwijzing naar `plan-van-aanpak.md` en
+   het data-accessblok uit het plan.
+4. **`README.md`:** doel, starten, gebruiken en controleren, zodat agent en
+   collega's de huidige staat begrijpen.
+5. **Structuur:** voeg ontbrekende onderdelen toe, zoals `logs/`,
+   `docs/handoffs/` en `data/example/`. Verplaats werkende code alleen als dat
+   nodig is en benoem de gevolgen voor paden en imports.
+6. **Controle:** een minimale test of handmatige check die bevestigt dat het
+   bestaande gedrag na deze stappen nog werkt.
+
+Bouw nieuwe functionaliteit pas daarna.
