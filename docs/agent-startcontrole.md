@@ -31,8 +31,12 @@ die uiteen kunnen lopen. Herstart de agentsessie na het hernoemen van een skill.
    aan bod komen, zonder de vraaglimieten te overschrijden.
 5. Controleer de voorgestelde reponaam, data/example/, data/private/,
    docs/handoffs/ en logs/. De enige intake-uitvoer is plan-van-aanpak.md op de
-   afgesproken plek, met het AGENTS.md-voorstel en nog te verifiëren deny-regels.
-6. Controleer de samenvatting, afsluitende herinnering en optionele verdieping.
+   afgesproken plek. Bij Kort is dat een A4-plan met fase 1, data-afspraken en
+   startopdracht; bij Uitgebreid met het AGENTS.md-voorstel en deny-regels.
+6. Controleer bij Kort dat de laatste vraag over fase 1 gaat, met twee of drie
+   voorstellen, en dat het plan volledig in het gesprek staat, binnen één A4
+   en zonder aparte samenvatting. Controleer ook de afsluitende herinnering en
+   de optionele verdieping.
    Er worden geen app, repository of instellingen aangemaakt tijdens de intake.
 7. Herhaal met Bestaande repository en een fictieve oefenrepo. Het plan
    beschrijft de huidige staat en de agent-ready-stappen; de oefenrepo blijft

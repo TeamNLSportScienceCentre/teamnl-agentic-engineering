@@ -1,13 +1,15 @@
 ---
 name: teamnl-agentic-engineering-intake-skill
-description: Begeleid TeamNL-cursisten met een begrensde korte of uitgebreide intake naar een plan voor een nieuwe of bestaande repository. Richt je op doel, aanpak, gebruikers, beschikbare bronnen, gegevensbescherming, logging en projectstructuur; bij een bestaande repository ook op de huidige staat en de stappen om die agent-ready te maken. Technische uitwerking en bouwen volgen later.
+description: Begeleid TeamNL-cursisten met een begrensde korte of uitgebreide intake naar een plan voor een nieuwe of bestaande repository. De korte intake sluit af met een vraag over fase 1 en levert een bouwplan van maximaal één A4. Richt je op doel, aanpak, gebruikers, beschikbare bronnen, gegevensbescherming, logging en projectstructuur; bij een bestaande repository ook op de huidige staat en de stappen om die agent-ready te maken. Technische uitwerking en bouwen volgen later.
 ---
 
 # teamnl-agentic-engineering-intake-skill
 
 Begeleid een cursist naar één `plan-van-aanpak.md` voor een nieuwe repository
-of een bestaande repository die verder wordt ontwikkeld, en een compacte,
-begrijpelijke samenvatting van het plan in het agentgesprek.
+of een bestaande repository die verder wordt ontwikkeld. In de korte variant is
+dat een bouwplan voor fase 1 van maximaal één A4, volledig zichtbaar in het
+agentgesprek. In de uitgebreide variant is het een volledig plan met een
+compacte, begrijpelijke samenvatting in het agentgesprek.
 Gebruik zakelijk, begrijpelijk Nederlands. Dit is een intake op hoofdlijnen.
 Verhelder het plan achter het vraagstuk: waarom het nodig is, wat moet verbeteren,
 welke aanpak de cursist voor ogen heeft, wie betrokken zijn, wat de eerste
@@ -19,13 +21,15 @@ Deze skill werkt zelfstandig.
 
 Stel bij een nieuwe intake eerst, in één beurt, deze twee keuzevragen:
 
-1. **Wil je een korte intake voor snel een bruikbaar plan, of een uitgebreide
-   intake met meer aandacht voor keuzes en projectinrichting?**
+1. **Wil je een korte intake met een bouwplan voor fase 1 op één A4, of een
+   uitgebreide intake met meer aandacht voor keuzes en projectinrichting?**
 2. **Begin je met een nieuwe repository of bouw je verder op een bestaande
    repository?**
 
-Stel in die beurt nog geen casusvraag. Sla een keuzevraag over als het antwoord
-al bekend is. Gebruik eerder gegeven casusinformatie; begin niet opnieuw.
+Noem Kort als eerste en markeer die als aanbevolen: dit is de standaard voor
+de gezamenlijke sessies. Stel in die beurt nog geen casusvraag. Sla een
+keuzevraag over als het antwoord al bekend is. Gebruik eerder gegeven
+casusinformatie; begin niet opnieuw.
 
 - **Nieuwe repository:** het plan beschrijft een nieuwe repository. Bestaande
   code of werk in uitvoering dient als referentie, niet als fundament: via een
@@ -50,6 +54,7 @@ zelf iets anders antwoorden. Gebruik dit alleen voor:
 - de startsituatie: Nieuwe repository of Bestaande repository;
 - de repository-indeling in thema 8: standaardindeling of eigen voorkeur; bij
   een bestaande repository: huidige indeling aanvullen of naar de standaardindeling;
+- de slotvraag over fase 1 in de korte variant: twee of drie voorstellen;
 - de optionele verdiepingsronde: wel of geen tien vervolgvragen.
 
 Stel de twee startkeuzes samen in één aanroep van de keuzetool als die meerdere
@@ -69,6 +74,8 @@ wat bekend is, welke vragen al zijn gesteld en wat nog openstaat.
   heel onduidelijk is, mag één verduidelijkingsvraag volgen: nooit meer dan twee.
   Een helder antwoord dat nog niet alle details bevat, is geen reden voor een
   tweede vraag. 'Weet ik niet' kan gewoon als open punt worden genoteerd.
+  Thema 6 komt in de korte variant als slotvraag over fase 1 ná thema 8; zie
+  [thema 6](#6-aanpak-eerste-versie-en-belangrijkste-voorwaarden).
 - **Uitgebreid:** maximaal drie vragen per thema, inclusief verduidelijkingen.
   Dit is een bovengrens, geen streefaantal. Stop zodra het thema voldoende
   duidelijk is om het project te plannen.
@@ -82,7 +89,7 @@ wat bekend is, welke vragen al zijn gesteld en wat nog openstaat.
 - Binnen de basisintake staan alleen de eenmalige startkeuzes, intakevariant
   en startsituatie, buiten de themalimieten. De bestemming van het plan valt
   onder thema 8 en telt daar mee.
-  Lever eerst het plan en de samenvatting op. Daarna mag de cursist kiezen voor
+  Lever eerst het plan op. Daarna mag de cursist kiezen voor
   de afzonderlijke verdiepingsronde hieronder; die geeft geen extra vraagruimte
   tijdens de basisintake.
 - Sla afgedekte thema's over. Gebruik antwoorden die meerdere thema's afdekken
@@ -112,8 +119,9 @@ technisch detail op zichzelf is geen verzoek om een technische vragenreeks.
 ## De acht thema's
 
 De voorbeelden zijn brede startvragen, geen extra checklist. Pas ze aan bekende
-informatie aan. Thema 8 blijft als laatste; de andere thema's kun je overslaan
-als de antwoorden al beschikbaar zijn.
+informatie aan. Thema 8 blijft als laatste; in de korte variant volgt daarna
+alleen nog thema 6 als slotvraag over fase 1. De andere thema's kun je
+overslaan als de antwoorden al beschikbaar zijn.
 
 ### 1. Casus en aanleiding
 
@@ -192,6 +200,8 @@ Neem in het plan een invulbaar blok voor het toekomstige AGENTS.md op volgens
 [references/data-access.md](references/data-access.md), inclusief verboden paden
 en de nog te controleren technische deny-regels per gebruikte agent.
 Dit blijft onderdeel van thema 4, zonder extra vragen buiten de limiet.
+Kort: de kern van deze afspraken staat in het A4-plan; de bouwagent werkt het
+volledige blok bij de start uit in `AGENTS.md`.
 
 Neem bestaande antwoorden over. Ontbrekende niet-essentiële maatregelen worden
 voorstellen; onbekende toestemming of gevoeligheid blijft een voorwaarde vóór
@@ -243,6 +253,26 @@ acceptatiecontrole bespreken. Overige technische checks worden door de agent
 voorgesteld bij de uitwerking. Inventariseer niet afzonderlijk alle accounts,
 tools of ervaringsniveaus en voer geen technische startcontroles uit.
 
+**Kort: slotvraag over fase 1.** Stel dit thema in de korte variant altijd als
+laatste vraag, ná thema 8, ook als de cursist al een eerste stap noemde. Fase 1
+is wat aan het eind van de eerste gezamenlijke bouwsessie met een coding agent
+moet werken: de MVP. Bedenk op basis van het gesprek twee of drie voorstellen,
+elk één kleine, complete route van invoer naar bruikbaar resultaat die in één
+sessie haalbaar is. Begin met het kleinste voorstel dat al waarde heeft en
+markeer dat als aanbevolen; neem een al genoemde eerste stap als voorstel over.
+Ga uit van fictieve of toegestane data zolang toestemming niet rond is. Bij een
+bestaande repository horen de agent-ready-stappen bij fase 1; één voorstel mag
+alleen uit die stappen bestaan. Stel de vraag met de keuzetool: een kort label
+en per voorstel één zin over wat het oplevert. Zonder keuzetool noem je de
+voorstellen genummerd in de vraag. De cursist kan altijd een eigen invulling geven.
+
+Voorbeeld: **Wat moet er aan het eind van de eerste gezamenlijke bouwsessie
+werken? Kies een voorstel of geef je eigen invulling.**
+
+Dit is de enige vraag van thema 6 in de korte variant; verduidelijk alleen bij
+een heel onduidelijk antwoord. Wat buiten fase 1 valt en wanneer fase 1 klaar
+is, stelt de agent zelf voor in het plan.
+
 ### 7. Logging en beheer
 
 Voorbeeld: **Wat wil je achteraf kunnen terugvinden over het gebruik en eventuele
@@ -279,7 +309,8 @@ streepjes. Behoud vaste herkenningsnamen zoals `AGENTS.md`, `CLAUDE.md`,
 
 Bij geen voorkeur gebruik je
 [references/repository-structuur.md](references/repository-structuur.md)
-zonder extra akkoordvraag. Geef een concrete boomstructuur met `logs/`.
+zonder extra akkoordvraag. Geef een concrete boomstructuur met `logs/`; in de
+korte variant volstaat een opsomming van de mappen in één of twee regels.
 Neem genoemde voorkeuren over en houd de inrichting passend bij versie 1.
 Documentatie, Git-werkwijze, overdraagbaarheid en eventuele deployment kunnen
 binnen dit thema worden besproken als ze nog bepalende open keuzes bevatten.
@@ -289,16 +320,19 @@ Bij een bestaande repository behoud je de huidige naam; noem een naam volgens
 `doelgroep-doel-specifiek` alleen als de cursist wil hernoemen. Gebruik
 [references/repository-structuur.md](references/repository-structuur.md#bestaande-repository-agent-ready-maken)
 als controlelijst: geef de huidige en beoogde boomstructuur met `logs/`, wat
-ontbreekt om agent-ready te zijn en de stappen in volgorde. Stel geen
-herindeling van werkende code voor zonder reden.
+ontbreekt om agent-ready te zijn en de stappen in volgorde. In de korte variant
+volstaan de huidige staat in één zin en de ontbrekende stappen in het kort.
+Stel geen herindeling van werkende code voor zonder reden.
 
 ## Plan en einde van de intake
 
 Rond af zodra de kern bekend is of de thema's hun vraaglimiet hebben bereikt.
 De acht thema's hebben geen verplicht minimum aan vragen. Voorkom dat de
-indeling van het plan alsnog extra interviewvragen oplevert.
+indeling van het plan alsnog extra interviewvragen oplevert. In de korte
+variant rond je pas af na de slotvraag over fase 1.
 
-Gebruik [references/plan-van-aanpak.md](references/plan-van-aanpak.md).
+Gebruik [references/plan-van-aanpak.md](references/plan-van-aanpak.md): het
+A4-sjabloon voor de korte variant, de volledige indeling voor de uitgebreide.
 Vermeld bevestigde wensen, voorstellen en open punten afzonderlijk.
 Als probleem, gebruiker of eerste versie nog onduidelijk is, lever een concept
 met die ontbrekende besluiten; ga niet onbeperkt doorvragen.
@@ -306,11 +340,18 @@ Neem een korte uitzoeklijst op voor de agent: te lezen documentatie, eventueel
 online op te zoeken bronnen, voorbeelden met hun leesrechten, te beoordelen
 legacycode en technische details die nog moeten worden vastgesteld. Vermeld
 per blokkade wat eerst nodig is. Niet onderzochte API-mogelijkheden zijn niet
-geverifieerd alleen omdat de cursist toegang heeft.
+geverifieerd alleen omdat de cursist toegang heeft. In de korte variant gaan
+deze punten op in de open punten en de startopdracht van het A4-plan.
 
-### Document en zichtbare samenvatting
+### Document en weergave in het gesprek
 
-Lever het plan op twee niveaus op:
+**Kort:** het plan is één bouwplan voor fase 1 van maximaal één A4: hooguit
+circa 450 woorden, zonder het verborgen watermerkje. Toon het volledige plan
+in het agentgesprek, ook als er een bestand is gemaakt, en geef géén aparte
+samenvatting; de cursist leest alles in één keer. Is er te weinig ruimte,
+schrap dan eerst details, nooit de afbakening van fase 1 of de data-afspraken.
+
+**Uitgebreid:** lever het plan op twee niveaus op:
 
 1. **Handout:** het volledige `plan-van-aanpak.md`, als overdracht en naslag.
 2. **Samenvatting in het agentgesprek:** laat de cursist het plan direct in de
@@ -328,13 +369,14 @@ uitleg onderscheid tussen afspraken met de cursist en voorstellen van de agent.
 Sluit af met de belangrijkste nog open keuze of afhankelijkheid en een link
 naar het document als dat is opgeslagen.
 
-Neem in het plan het watermerkje op volgens
+Sluit het plan af met het watermerkje volgens
 [references/plan-van-aanpak.md](references/plan-van-aanpak.md#watermerkje):
-een voetregel en een bouwafspraak voor één commentaarregel in de code.
+één verborgen HTML-commentaar met de voetregel en de bouwafspraak voor één
+commentaarregel in de code. Verwijs er niet zichtbaar naar.
 
 Nodig zonder verplichte akkoordvraag uit tot vragen en aanpassingen, bijvoorbeeld:
 'Je kunt een keuze laten toelichten of aangeven wat je in dit plan wilt wijzigen.'
-Geef daarna de afsluitende herinnering hieronder. Sluit de eerste samenvatting
+Geef daarna de afsluitende herinnering hieronder. Sluit de eerste oplevering
 af met de keuze voor de optionele verdiepingsronde. Start die alleen als de
 cursist daarvoor kiest.
 Als de cursist losse feedback geeft, pas het plan en de samenvatting samen aan.
@@ -348,8 +390,9 @@ niet automatisch in de cursusrepo en overschrijf geen ander projectplan.
 
 ### Afsluitende herinnering
 
-Herinner de cursist bij de eerste oplevering, buiten de woordgrens van de
-samenvatting, kort aan drie stappen voordat er gebouwd wordt:
+Herinner de cursist bij de eerste oplevering, buiten de woordgrens van het plan
+of de samenvatting, kort aan drie stappen voordat er gebouwd wordt. In de korte
+variant krijgt elke stap één korte regel:
 
 1. **Zelf bestuderen:** lees het hele plan kritisch. Het is een voorstel van de
    agent op basis van het gesprek; de cursist blijft verantwoordelijk.
@@ -388,8 +431,10 @@ plan aan te scherpen? Ik stel ze één voor één.**
   gevoelige gegevens en de grens tussen plannen en bouwen blijven gelden.
 - Verwerk na tien antwoorden, of wanneer de cursist de vragen eerder wil
   afronden, de ontvangen inhoud in hetzelfde plan en geef een vernieuwde compacte
-  samenvatting met de herinnering in één zin. Leg gewijzigde keuzes en hun
-  redenen uit; onzekerheden blijven open punten. Een tussentijdse vraag of correctie van de cursist mag direct
+  samenvatting met de herinnering in één zin. In de korte variant blijft het
+  plan maximaal één A4 en toon je het vernieuwde plan in plaats van een
+  samenvatting. Leg gewijzigde keuzes en hun redenen uit; onzekerheden blijven
+  open punten. Een tussentijdse vraag of correctie van de cursist mag direct
   worden verwerkt zonder de teller voor vragen van de agent te veranderen.
   Bij een verzoek om alle werkzaamheden te stoppen, stop je ook het bijwerken.
 - Bied na deze ronde niet automatisch opnieuw tien vragen aan en begin niet

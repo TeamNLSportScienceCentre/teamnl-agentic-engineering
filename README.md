@@ -125,9 +125,12 @@ Echte keuzes, zoals kort of uitgebreid, verschijnen als keuzeknoppen als de
 agent dat ondersteunt. De beschikbaarheid hangt af van de agent, versie en modus. Zonder keuzetool
 stelt de agent dezelfde vraag in tekst.
 
-Je kiest eerst een **korte** of **uitgebreide** intake. Kort stelt maximaal één
-brede vraag per thema, met alleen bij een heel onduidelijk eerste antwoord één
-verduidelijkingsvraag. Uitgebreid stelt maximaal drie vragen per thema. Dat zijn
+Je kiest eerst een **korte** of **uitgebreide** intake; in de gezamenlijke
+sessies gebruikt iedereen Kort. Kort stelt maximaal één brede vraag per thema,
+met alleen bij een heel onduidelijk eerste antwoord één verduidelijkingsvraag,
+en sluit af met de vraag wat er in **fase 1** af moet zijn: wat aan het eind van
+de eerste gezamenlijke bouwsessie werkt. De agent geeft daarbij twee of drie
+voorstellen. Uitgebreid stelt maximaal drie vragen per thema. Dat zijn
 bovengrenzen; reeds beantwoorde onderwerpen worden overgeslagen. Per beurt volgt
 één samenhangende vraag die ruimte geeft voor een uitgebreider antwoord.
 
@@ -145,16 +148,19 @@ uitgezocht, tenzij de cursist die zelf wil bespreken. Waar relevant legt de
 intake vast welke documentatie of voorbeelden beschikbaar zijn en wat de agent
 mag bekijken. Bij bereikte vraaglimieten worden onzekerheden uitzoekpunten in
 het plan; de basisintake wordt niet verlengd. De repository-indeling komt als
-laatste; zonder voorkeur gebruikt de skill de standaardstructuur.
+laatste, bij Kort alleen nog gevolgd door de vraag over fase 1; zonder voorkeur
+gebruikt de skill de standaardstructuur.
 Het repositoryvoorstel bevat altijd `logs/` met passende afspraken over inhoud,
 toegang, beheer en wat buiten Git blijft.
-Het resultaat is één `plan-van-aanpak.md` op de afgesproken locatie, plus een
-compacte samenvatting in het agentgesprek. Daarin staan de aanpak en de
-belangrijkste ontwerpkeuzes met hun reden, in begrijpelijke taal. Daarna kun je
+Het resultaat is één `plan-van-aanpak.md` op de afgesproken locatie. Bij Kort
+is dat een bouwplan voor fase 1 van maximaal één A4, dat volledig in het
+agentgesprek verschijnt. Bij Uitgebreid is het een volledig plan plus een
+compacte samenvatting in het agentgesprek, met de aanpak en de belangrijkste
+ontwerpkeuzes en hun reden, in begrijpelijke taal. Daarna kun je
 kiezen voor tien specifieke inhoudelijke vervolgvragen om het plan aan te
 scherpen, één per beurt. Deze optionele ronde geldt voor beide intakevarianten
 en start alleen als je daarvoor kiest. De antwoorden worden verwerkt in hetzelfde
-plan en een vernieuwde samenvatting; eerder stoppen met de vragen kan ook.
+plan; eerder stoppen met de vragen kan ook.
 Je kunt ook losse vragen stellen of wijzigingen doorgeven; het plan wordt dan aangepast.
 Bestudeer het plan daarna zelf, vraag bij voorkeur een second opinion en verwijs
 je coding agents ernaar, bijvoorbeeld via `AGENTS.md` of `CLAUDE.md`.
@@ -180,9 +186,11 @@ en `agentic-coding-handoff.md`. Vaste namen zoals `AGENTS.md`, `CLAUDE.md`,
 - `docs/handoffs/`: geschoonde sessieverslagen.
 - `logs/runtime/` en `logs/test/`: ruwe uitvoerlogs, buiten Git.
 
-De intake legt de data-eigenaar, toestemming, lees- en verwerkingsrechten vast
-en levert in het plan een blok voor het toekomstige `AGENTS.md` plus voorstellen
-voor technische toegangsregels. De intake wijzigt die instellingen nog niet.
+De intake legt de data-eigenaar, toestemming, lees- en verwerkingsrechten vast.
+Bij Uitgebreid bevat het plan een blok voor het toekomstige `AGENTS.md` plus
+voorstellen voor technische toegangsregels; bij Kort staat de kern in het
+A4-plan en werkt de bouwagent die bij de start uit in `AGENTS.md`. De intake
+wijzigt die instellingen nog niet.
 
 Zie het [naslagwerk op de aparte branch](https://github.com/TeamNLSportScienceCentre/teamnl-agentic-engineering/tree/naslagwerk/naslagwerk) en de
 [start- en controlehandleiding](docs/agent-startcontrole.md).
