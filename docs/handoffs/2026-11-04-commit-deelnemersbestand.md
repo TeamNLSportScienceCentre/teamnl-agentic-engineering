@@ -11,3 +11,10 @@
 - Controle: Git-status en bestandsinhoud bekeken; het bestand is nog steeds leeg.
 - Beperking: Node.js is niet beschikbaar in de sandbox; de app is niet gewijzigd en browsercontroles zijn niet uitgevoerd.
 - Vervolg: de hernoeming committen en pushen naar main op verzoek van de gebruiker.
+
+## Vervolg: lokaal bestand uitsluiten
+
+- Wijziging: een negeerregel voor een lokaal tekstbestand toegevoegd aan `.gitignore`.
+- Controle: `git check-ignore -v` bevestigt dat het bestand wordt uitgesloten; `git ls-files` bevestigt dat het niet wordt gevolgd.
+- Beperking: Node.js is niet beschikbaar in de sandbox. De app is niet gewijzigd; browsercontroles zijn niet uitgevoerd.
+- Vervolg: de negeerregel committen en pushen naar main op verzoek van de gebruiker.
