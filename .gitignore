@@ -2,7 +2,6 @@
 .env
 .env.*
 !.env.example
-NIETDELEN
 
 # Downloadnamen van browsers
 .env (*)
