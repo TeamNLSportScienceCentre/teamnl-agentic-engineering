@@ -62,5 +62,6 @@ volg anders de bovenstaande regels rechtstreeks.
 
 ## Branchindeling
 
-Main bevat de oefenrepo en intake-skill. Het naslagwerk staat uitsluitend op
-de branch naslagwerk, in de map naslagwerk/. Voeg die map niet toe aan main.
+Main bevat de oefenrepo, de intake-skill en het naslagwerk (map naslagwerk/).
+De branch naslagwerk blijft bestaan voor deelnemers van sessie 1a, maar wordt
+niet meer bijgewerkt; wijzig het naslagwerk op main.

@@ -192,7 +192,7 @@ voorstellen voor technische toegangsregels; bij Kort staat de kern in het
 A4-plan en werkt de bouwagent die bij de start uit in `AGENTS.md`. De intake
 wijzigt die instellingen nog niet.
 
-Zie het [naslagwerk op de aparte branch](https://github.com/TeamNLSportScienceCentre/teamnl-agentic-engineering/tree/naslagwerk/naslagwerk) en de
+Zie het [naslagwerk](naslagwerk/README.md) en de
 [start- en controlehandleiding](docs/agent-startcontrole.md).
 
 ## Controle voor de begeleider
