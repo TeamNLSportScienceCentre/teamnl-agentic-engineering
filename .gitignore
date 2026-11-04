@@ -3,6 +3,7 @@
 .env.*
 !.env.example
 NIETDELEN
+geheime_info
 
 # Downloadnamen van browsers
 .env (*)
