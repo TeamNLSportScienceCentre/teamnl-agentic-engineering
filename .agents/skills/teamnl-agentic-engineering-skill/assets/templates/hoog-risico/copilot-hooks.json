@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "hooks": {
+    "preToolUse": [
+      {
+        "type": "command",
+        "bash": "python3 .agents/hooks/bescherm-gevoelige-data.py --agent copilot",
+        "powershell": "python .agents/hooks/bescherm-gevoelige-data.py --agent copilot",
+        "cwd": ".",
+        "timeoutSec": 30
+      }
+    ],
+    "postToolUse": [
+      {
+        "type": "command",
+        "bash": "python3 .agents/hooks/bescherm-gevoelige-data.py --agent copilot",
+        "powershell": "python .agents/hooks/bescherm-gevoelige-data.py --agent copilot",
+        "cwd": ".",
+        "timeoutSec": 30
+      }
+    ]
+  }
+}

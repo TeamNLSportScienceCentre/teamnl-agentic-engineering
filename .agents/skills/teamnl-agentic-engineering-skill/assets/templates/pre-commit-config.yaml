@@ -1,0 +1,12 @@
+# Controle op secrets vóór elke commit, met Gitleaks via het pre-commit-framework.
+# Eenmalig per computer activeren (zie README.md):
+#   pip install pre-commit     (of: pipx install pre-commit / uv tool install pre-commit)
+#   pre-commit install
+# Hook-id's: gitleaks (bouwt zelf, gebruikt Go), gitleaks-system (gitleaks staat al
+# op PATH) of gitleaks-docker. Controleer bij een update de nieuwste versie op
+# https://github.com/gitleaks/gitleaks/releases
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks

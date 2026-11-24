@@ -1,15 +1,16 @@
 # Opdracht voor coding agents
 
-## Cursusmateriaal en intake-skill
+## Cursusmateriaal en skill
 
-Naast de oefenapp bevat deze repository de zelfstandige intake-skill in
-`.agents/skills/teamnl-agentic-engineering-intake-skill/`. Houd de skill en ondersteunende
-referenties daar, los van applicatiecode in `src/`. Codex en Mistral Vibe lezen
-die map direct; `.claude/skills/teamnl-agentic-engineering-intake-skill/SKILL.md` is alleen een
-verwijzing voor Claude Code met dezelfde naam en beschrijving. De skill begeleidt uitsluitend
-een intake tot een plan voor een nieuwe of bestaande repository. Pas de onderstaande
+Naast de oefenapp bevat deze repository de teamnl-agentic-engineering-skill in
+`.agents/skills/teamnl-agentic-engineering-skill/`. Houd de skill en ondersteunende
+referenties daar, los van applicatiecode in `src/`. Codex, GitHub Copilot en Mistral
+Vibe lezen die map direct; `.claude/skills/teamnl-agentic-engineering-skill/SKILL.md`
+is alleen een verwijzing voor Claude Code met dezelfde naam en beschrijving. De skill
+is bedoeld voor de eigen projectmap van een cursist: hij begeleidt een intake tot een
+plan en voert dat plan pas uit na expliciete goedkeuring. Pas de onderstaande
 browserapp-eisen niet toe op projecten van cursisten: hun eisen volgen uit
-de eigen casus. Het aanroepen van de intake is geen opdracht om de app te bouwen.
+de eigen casus. Het aanroepen van de skill is geen opdracht om de oefenapp te bouwen.
 
 ## Oefenapp
 
@@ -62,6 +63,6 @@ volg anders de bovenstaande regels rechtstreeks.
 
 ## Branchindeling
 
-Main bevat de oefenrepo, de intake-skill en het naslagwerk (map naslagwerk/).
+Main bevat de oefenrepo, de skill en het naslagwerk (map naslagwerk/).
 De branch naslagwerk blijft bestaan voor deelnemers van sessie 1a, maar wordt
 niet meer bijgewerkt; wijzig het naslagwerk op main.

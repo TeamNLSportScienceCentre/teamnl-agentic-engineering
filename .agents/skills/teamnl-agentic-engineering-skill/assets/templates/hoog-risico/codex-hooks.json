@@ -1,0 +1,29 @@
+{
+  "description": "TeamNL-beschermhook bij risiconiveau hoog. Na elke wijziging opnieuw vertrouwen via /hooks.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/.agents/hooks/bescherm-gevoelige-data.py\" --agent codex",
+            "commandWindows": "python \"$(git rev-parse --show-toplevel)/.agents/hooks/bescherm-gevoelige-data.py\" --agent codex",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/.agents/hooks/bescherm-gevoelige-data.py\" --agent codex",
+            "commandWindows": "python \"$(git rev-parse --show-toplevel)/.agents/hooks/bescherm-gevoelige-data.py\" --agent codex",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

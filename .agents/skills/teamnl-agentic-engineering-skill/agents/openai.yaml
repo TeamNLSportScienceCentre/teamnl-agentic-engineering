@@ -1,0 +1,4 @@
+interface:
+  display_name: "teamnl-agentic-engineering-skill"
+  short_description: "Nieuw project, bestaande repo of feature: van intake naar plan en uitvoering"
+  default_prompt: "Gebruik $teamnl-agentic-engineering-skill om mij vraag voor vraag te begeleiden naar een plan van aanpak voor een nieuw project, een bestaande repository of een nieuwe feature, en voer het plan uit na mijn goedkeuring."

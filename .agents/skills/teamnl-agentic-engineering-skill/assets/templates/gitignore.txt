@@ -1,0 +1,37 @@
+# TeamNL-basis. Vul aan voor de gekozen stack, bijvoorbeeld .venv/ en
+# __pycache__/ bij Python of node_modules/ bij JavaScript.
+# Let op: .gitignore is geen toegangsregeling voor de agent en haalt niets uit
+# bestaande commits.
+
+# Geheimen: nooit committen, ook geen varianten
+.env
+.env.*
+!.env.example
+
+# Echte of vertrouwelijke data en media: buiten Git. De map zelf blijft
+# zichtbaar via .gitkeep.
+data/private/*
+!data/private/.gitkeep
+media/private/*
+!media/private/.gitkeep
+
+# Ruwe logs, gegenereerde en tijdelijke bestanden
+logs/runtime/*
+!logs/runtime/.gitkeep
+logs/test/*
+!logs/test/.gitkeep
+output/*
+!output/.gitkeep
+tmp/*
+!tmp/.gitkeep
+*.log
+
+# Persoonlijke agentinstellingen en mappen buiten het project die de agent per
+# computer mag lezen (paden verschillen per computer)
+.claude/settings.local.json
+.claude/toegestane-mappen.txt
+
+# Besturingssysteem en Office
+.DS_Store
+Thumbs.db
+~$*

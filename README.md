@@ -95,84 +95,78 @@ in met je eigen waarden. Je noreply-adres vind je bij je GitHub-e-mailinstelling
 Git gevolgd worden. Gebruik nooit `git add -f .env`. Voeg voor deze oefening
 alleen je gewijzigde bronbestand toe. Deel je `.env` ook niet via screenshots.
 
-## Intake voor een eigen project
+## Een eigen project met de skill
 
-De **teamnl-agentic-engineering-intake-skill** staat in een aparte submap, los van de appcode:
+De **teamnl-agentic-engineering-skill** begeleidt je van idee naar plan, en voert
+dat plan uit nadat jij het hebt goedgekeurd. Hij vervangt de eerdere
+`teamnl-agentic-engineering-intake-skill`. De skill staat in een aparte submap,
+los van de appcode:
 
 ```text
-.agents/skills/teamnl-agentic-engineering-intake-skill/
-|-- SKILL.md
-|-- teamnl-agentic-engineering-intake-skill.md
+.agents/skills/teamnl-agentic-engineering-skill/
+|-- SKILL.md                              # Startbestand
+|-- teamnl-agentic-engineering-skill.md   # Centrale instructies
 |-- agents/openai.yaml
-`-- references/
+|-- references/            # Routes, plansjablonen, data, agents, installatie, stijl
+|-- assets/templates/      # Sjablonen voor projectbestanden
+|-- CHANGELOG.md           # Versies van de skill
+`-- acceptatietests.md     # Tests voor beheerders
 ```
 
-Codex en Mistral Vibe vinden de skill direct in `.agents/skills/`. Claude Code
-zoekt in `.claude/skills/`; daar staat alleen een korte verwijzing naar dezelfde
-instructies. Pas de skill dus altijd aan in `.agents/skills/`.
+Codex, GitHub Copilot en Mistral Vibe vinden de skill in `.agents/skills/`.
+Claude Code zoekt in `.claude/skills/`; daar staat alleen een korte verwijzing
+naar dezelfde instructies. Pas de skill dus altijd aan in `.agents/skills/`.
 
-Open deze repository als project en start de intake:
+### Starten in je eigen projectmap
 
-| Agent        | Starten                    |
-|--------------|----------------------------|
-| Codex        | `$teamnl-agentic-engineering-intake-skill`  |
-| Claude Code  | `/teamnl-agentic-engineering-intake-skill`  |
-| Mistral Vibe | `/teamnl-agentic-engineering-intake-skill`  |
+Gebruik de skill in de map van je eigen project, niet in deze cursusrepo.
 
-Mistral Vibe laadt projectskills alleen als je de map als vertrouwd markeert.
+1. **Kopieer twee mappen** uit deze repository naar je projectmap:
+   - `.agents/skills/teamnl-agentic-engineering-skill/`;
+   - `.claude/skills/teamnl-agentic-engineering-skill/` (alleen nodig voor
+     Claude Code).
 
-Echte keuzes, zoals kort of uitgebreid, verschijnen als keuzeknoppen als de
-agent dat ondersteunt. De beschikbaarheid hangt af van de agent, versie en modus. Zonder keuzetool
-stelt de agent dezelfde vraag in tekst.
+   Mappen die met een punt beginnen, zijn soms verborgen. Zie 'Bestand niet
+   zichtbaar?' bij [Starten zonder installatie](#starten-zonder-installatie).
+2. **Zet je eerste bestanden erin, als je die al hebt.** Bijvoorbeeld notities,
+   documentatie of een eerste script. Echte data zet je er nog niet in. Dat
+   regel je met de skill bij de data-afspraken.
+3. **Open je projectmap** in je editor of agent. Open niet je hele schijf of je
+   gebruikersmap.
+4. **Start de skill** in het gesprek met je agent:
 
-Je kiest eerst een **korte** of **uitgebreide** intake; in de gezamenlijke
-sessies gebruikt iedereen Kort. Kort stelt maximaal één brede vraag per thema,
-met alleen bij een heel onduidelijk eerste antwoord één verduidelijkingsvraag,
-en sluit af met de vraag wat er in **fase 1** af moet zijn: wat aan het eind van
-de eerste gezamenlijke bouwsessie werkt. De agent geeft daarbij twee of drie
-voorstellen. Uitgebreid stelt maximaal drie vragen per thema. Dat zijn
-bovengrenzen; reeds beantwoorde onderwerpen worden overgeslagen. Per beurt volgt
-één samenhangende vraag die ruimte geeft voor een uitgebreider antwoord.
+   | Agent | Typ in het gesprek |
+   | --- | --- |
+   | Codex | `$teamnl-agentic-engineering-skill` |
+   | Claude Code | `/teamnl-agentic-engineering-skill` |
+   | GitHub Copilot | `/teamnl-agentic-engineering-skill` |
+   | Mistral Vibe | `/teamnl-agentic-engineering-skill` (markeer de map eerst als vertrouwd) |
 
-In dezelfde eerste beurt kies je of je met een **nieuwe repository** begint of
-verder bouwt op een **bestaande repository**. Bij een nieuwe repository dient
-eerder werk als referentie, via een link in het plan of later in `archive/`. Bij
-een bestaande repository beschrijft het plan de huidige staat en de stappen om
-die agent-ready te maken; de intake wijzigt de repository zelf niet.
+   Verschijnt de skill niet? Herstart dan je agentsessie.
 
-Het gesprek gaat over het plan achter de casus: doel, aanpak, betrokkenen, eerste
-bruikbare stap en projectinrichting. De acht vaste thema's zijn casus,
-gebruikers, bronnen, gegevensbescherming, hergebruik, eerste versie, logging en
-repository-inrichting. Technische specificaties worden later door de agent
-uitgezocht, tenzij de cursist die zelf wil bespreken. Waar relevant legt de
-intake vast welke documentatie of voorbeelden beschikbaar zijn en wat de agent
-mag bekijken. Bij bereikte vraaglimieten worden onzekerheden uitzoekpunten in
-het plan; de basisintake wordt niet verlengd. De repository-indeling komt als
-laatste, bij Kort alleen nog gevolgd door de vraag over fase 1; zonder voorkeur
-gebruikt de skill de standaardstructuur.
-Het repositoryvoorstel bevat altijd `logs/` met passende afspraken over inhoud,
-toegang, beheer en wat buiten Git blijft.
-Het resultaat is één `plan-van-aanpak.md` op de afgesproken locatie. Bij Kort
-is dat een bouwplan voor fase 1 van maximaal één A4, dat volledig in het
-agentgesprek verschijnt. Bij Uitgebreid is het een volledig plan plus een
-compacte samenvatting in het agentgesprek, met de aanpak en de belangrijkste
-ontwerpkeuzes en hun reden, in begrijpelijke taal. Daarna kun je
-kiezen voor tien specifieke inhoudelijke vervolgvragen om het plan aan te
-scherpen, één per beurt. Deze optionele ronde geldt voor beide intakevarianten
-en start alleen als je daarvoor kiest. De antwoorden worden verwerkt in hetzelfde
-plan; eerder stoppen met de vragen kan ook.
-Je kunt ook losse vragen stellen of wijzigingen doorgeven; het plan wordt dan aangepast.
-Bestudeer het plan daarna zelf, vraag bij voorkeur een second opinion en verwijs
-je coding agents ernaar, bijvoorbeeld via `AGENTS.md` of `CLAUDE.md`.
-Tijdens deze intake worden geen applicatie of repository aangemaakt of gewijzigd.
+### Wat de skill doet
 
-Bekijk de [skillinstructies](.agents/skills/teamnl-agentic-engineering-intake-skill/teamnl-agentic-engineering-intake-skill.md).
-`SKILL.md` is het startbestand dat naar deze instructies verwijst.
-Codex ondersteunt deze repositorylocatie en het aanroepen via `$`; als een
-nieuwe skill niet verschijnt, herstart Codex. Zie de
-[officiële skill-documentatie](https://learn.chatgpt.com/docs/build-skills).
-Bij een andere coding agent kun je de instructies als startdocument gebruiken;
-automatische herkenning hangt van die agent af.
+De skill kijkt eerst wat er in je map staat, zonder data of `.env` te openen, en
+vat dat in een paar zinnen samen. Daarna kies je in één beurt:
+
+- **de route:** Nieuw project (een lege map of een paar eerste bestanden),
+  Bestaande repo op orde brengen (een werkend project) of Nieuwe feature (een
+  project dat al is ingericht);
+- **de variant:** Kort voor een concrete, afgebakende wens, Uitgebreid voor een
+  grotere wens. In de gezamenlijke sessies gebruikt iedereen Kort;
+- **de suggestiemodus:** gewone vragen, of bij keuzes twee of drie opties met
+  uitleg.
+
+Daarna stelt de skill één vraag per beurt. Echte keuzes verschijnen als
+keuzeknoppen als je agent dat ondersteunt, en anders als tekst. Het resultaat is
+een `plan-van-aanpak.md`, dat ook in het gesprek staat. Bestudeer het plan, vraag
+bij voorkeur een second opinion en geef daarna expliciet opdracht om het uit te
+voeren. Pas dan richt de skill je project in volgens de TeamNL-afspraken en
+bouwt hij in kleine stappen, met controlemomenten waarop jij meekijkt.
+
+Bekijk de [skillinstructies](.agents/skills/teamnl-agentic-engineering-skill/teamnl-agentic-engineering-skill.md)
+en de [versiegeschiedenis](.agents/skills/teamnl-agentic-engineering-skill/CHANGELOG.md).
+Meer over starten per agent staat in [docs/agent-startcontrole.md](docs/agent-startcontrole.md).
 
 ## Gezamenlijke cursusafspraken
 

@@ -1,0 +1,39 @@
+# Extra Gitleaks-regels bij risiconiveau hoog (teamnl-agentic-engineering-skill).
+# Kopieer dit bestand naar .gitleaks.toml in de root van het project. Gitleaks
+# gebruikt het dan automatisch bij de controle voor elke commit, naast de
+# standaardregels voor secrets.
+#
+# Deze regels zijn een vangnet. Ze herkennen alleen vaste formaten, geen namen,
+# geboortedata of foto's. Houd de patronen gelijk aan PATRONEN in
+# .agents/hooks/bescherm-gevoelige-data.py.
+#
+# Krijg je een onterechte melding? Zet dan `gitleaks:allow` als commentaar op die
+# regel, of zet de vingerafdruk uit de melding in .gitleaksignore. Verwijder geen
+# regel om een commit door te laten.
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "nl-paspoort-of-id-nummer"
+description = "Mogelijk Nederlands paspoort- of ID-kaartnummer"
+regex = '''\b[A-NP-Z]{2}[A-NP-Z0-9]{6}[0-9]\b'''
+tags = ["persoonsgegevens"]
+
+[[rules]]
+id = "mogelijk-bsn"
+description = "Negen cijfers op een rij: mogelijk een BSN"
+regex = '''\b[0-9]{9}\b'''
+tags = ["persoonsgegevens"]
+
+[[rules]]
+id = "mrz-reisdocument-regel-1"
+description = "Eerste MRZ-regel van een paspoort of ID-kaart"
+regex = '''\b[PI][A-Z<][A-Z]{3}[A-Z0-9<]{25,}'''
+tags = ["persoonsgegevens"]
+
+[[rules]]
+id = "mrz-reisdocument-regel-2"
+description = "Tweede MRZ-regel van een paspoort of ID-kaart"
+regex = '''[A-Z0-9<]{9}[0-9][A-Z<]{3}[0-9]{6}[0-9][MFX<][0-9]{6}[0-9]'''
+tags = ["persoonsgegevens"]

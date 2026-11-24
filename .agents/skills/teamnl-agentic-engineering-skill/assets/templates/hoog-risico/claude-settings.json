@@ -1,0 +1,60 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(!**/.env.example)",
+      "Read(**/data/private/**)",
+      "Read(**/media/private/**)",
+      "Read(/output/**)",
+      "Read(/logs/runtime/**)",
+      "Read(/tmp/**)",
+      "Edit(/.claude/settings.json)",
+      "Edit(/.claude/settings.local.json)",
+      "Edit(/.agents/hooks/**)",
+      "Edit(/.codex/**)",
+      "Edit(/.github/hooks/**)",
+      "Edit(/.github/copilot/**)",
+      "Edit(/.vibe/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Grep|Glob|Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -I \"${CLAUDE_PROJECT_DIR}/.agents/hooks/buiten-projectmap.py\" || exit 0",
+            "timeout": 10,
+            "statusMessage": "Controle: binnen de projectmap?"
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"${CLAUDE_PROJECT_DIR}/.agents/hooks/bescherm-gevoelige-data.py\" --agent claude",
+            "timeout": 30,
+            "onFailure": "block"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"${CLAUDE_PROJECT_DIR}/.agents/hooks/bescherm-gevoelige-data.py\" --agent claude",
+            "timeout": 30,
+            "onFailure": "block"
+          }
+        ]
+      }
+    ]
+  }
+}

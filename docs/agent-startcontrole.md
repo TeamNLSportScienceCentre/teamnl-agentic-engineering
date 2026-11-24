@@ -1,13 +1,15 @@
 # Agents starten en controleren
 
-Start vanuit de repositoryroot. De commando's met $ of / hieronder typ je
-in het gesprek met de agent, niet in PowerShell of een andere shell.
+Start de agent vanuit de map van je eigen project, met de twee skillmappen erin
+(zie de README). De commando's met $ of / hieronder typ je in het gesprek met de
+agent, niet in PowerShell of een andere shell.
 
 | Agent | Terminal | In het agentgesprek | Skilllocatie |
 | --- | --- | --- | --- |
-| Codex | codex | $teamnl-agentic-engineering-intake-skill | .agents/skills/teamnl-agentic-engineering-intake-skill/SKILL.md |
-| Claude Code | claude | /teamnl-agentic-engineering-intake-skill | .claude/skills/teamnl-agentic-engineering-intake-skill/SKILL.md |
-| Mistral Vibe Code | vibe | /teamnl-agentic-engineering-intake-skill | .agents/skills/teamnl-agentic-engineering-intake-skill/SKILL.md |
+| Codex | codex | $teamnl-agentic-engineering-skill | .agents/skills/teamnl-agentic-engineering-skill/SKILL.md |
+| Claude Code | claude | /teamnl-agentic-engineering-skill | .claude/skills/teamnl-agentic-engineering-skill/SKILL.md |
+| GitHub Copilot | chat in agentmodus, of copilot | /teamnl-agentic-engineering-skill | .agents/skills/teamnl-agentic-engineering-skill/SKILL.md |
+| Mistral Vibe Code | vibe | /teamnl-agentic-engineering-skill | .agents/skills/teamnl-agentic-engineering-skill/SKILL.md |
 
 Op Windows kun je codex.cmd en claude.cmd gebruiken als PowerShell de .ps1-
 starters blokkeert. Verander daarvoor geen systeembeleid. Mistral Vibe laadt
@@ -21,28 +23,22 @@ die uiteen kunnen lopen. Herstart de agentsessie na het hernoemen van een skill.
 
 ## Handmatige acceptatie per agent
 
-1. Start de agent vanuit de repositoryroot en controleer of de skill zichtbaar is.
-2. Gebruik het bovenstaande gesprekcommando. De eerste reactie vraagt Kort of
-   Uitgebreid en Nieuwe of Bestaande repository, met knoppen als beschikbaar en
-   anders als tekst.
-3. Kies Kort en Nieuwe repository en gebruik een fictieve casus: een dashboard voor een verzonnen
-   sportteam, zonder echte data. De agent stelt per beurt één samenhangende vraag.
-4. Controleer dat de data-eigenaar en lees-/verwerkingsrechten binnen thema 4
-   aan bod komen, zonder de vraaglimieten te overschrijden.
-5. Controleer de voorgestelde reponaam, data/example/, data/private/,
-   docs/handoffs/ en logs/. De enige intake-uitvoer is plan-van-aanpak.md op de
-   afgesproken plek. Bij Kort is dat een A4-plan met fase 1, data-afspraken en
-   startopdracht; bij Uitgebreid met het AGENTS.md-voorstel en deny-regels.
-6. Controleer bij Kort dat de laatste vraag over fase 1 gaat, met twee of drie
-   voorstellen, en dat het plan volledig in het gesprek staat, binnen één A4
-   en zonder aparte samenvatting. Controleer ook de afsluitende herinnering en
-   de optionele verdieping.
-   Er worden geen app, repository of instellingen aangemaakt tijdens de intake.
-7. Herhaal met Bestaande repository en een fictieve oefenrepo. Het plan
-   beschrijft de huidige staat en de agent-ready-stappen; de oefenrepo blijft
-   ongewijzigd.
+Gebruik een oefenmap met de twee skillmappen en een fictieve casus, zonder echte
+data. De scenario's met het verwachte gedrag staan in
+[acceptatietests.md](../.agents/skills/teamnl-agentic-engineering-skill/acceptatietests.md).
+Begin met deze:
 
-## Uitgevoerde controle op 16 oktober 2026
+1. **Scenario 1.** Een oefenmap zonder eigen bestanden: de eerste reactie vat
+   samen wat de skill ziet en vraagt in één beurt naar de route, de variant en
+   de suggestiemodus, met knoppen als die er zijn en anders als tekst.
+2. **Scenario 2.** Nieuw project, Kort, een dashboard voor een verzonnen
+   sportteam: één vraag per beurt, het plan past op één A4 en staat volledig in
+   het gesprek. Vóór goedkeuring verandert er niets behalve het plan.
+3. **Scenario 19.** Een oefenmap met een fictieve notitie, een script en een
+   databestand: de skill noemt het databestand alleen als soort, vraagt eerst
+   waarvoor de bestanden zijn en zet ze met een rol en een plek in het plan.
+
+## Uitgevoerde controle op 16 oktober 2026 (intake-skill 1.x)
 
 - Claude Code 2.1.197: claude.cmd --version en --help uitgevoerd.
 - Codex CLI 0.144.4: codex.cmd --version en --help uitgevoerd.

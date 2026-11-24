@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(!**/.env.example)",
+      "Read(**/data/private/**)",
+      "Read(**/media/private/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Grep|Glob|Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -I \"${CLAUDE_PROJECT_DIR}/.agents/hooks/buiten-projectmap.py\" || exit 0",
+            "timeout": 10,
+            "statusMessage": "Controle: binnen de projectmap?"
+          }
+        ]
+      }
+    ]
+  }
+}

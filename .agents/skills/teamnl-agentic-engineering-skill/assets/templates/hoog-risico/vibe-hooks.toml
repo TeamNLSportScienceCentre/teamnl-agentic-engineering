@@ -1,0 +1,22 @@
+# TeamNL-beschermhook bij risiconiveau hoog (teamnl-agentic-engineering-skill).
+# Hoort in het project op .vibe/hooks.toml. Vibe leest dit bestand alleen in een
+# vertrouwde map en alleen in de map waar je Vibe start: start Vibe dus vanuit de
+# root van de repository. strict = true zorgt dat een falende hook de actie
+# weigert in plaats van alleen te waarschuwen.
+# Werkt op macOS of Linux alleen `python3`? Pas het commando dan aan.
+
+[[hooks]]
+name = "teamnl-bescherming-vooraf"
+type = "pre_tool"
+command = "python .agents/hooks/bescherm-gevoelige-data.py --agent vibe"
+timeout = 30.0
+strict = true
+description = "Weigert acties op gevoelige paden en commando's met de echte-data-sleutel."
+
+[[hooks]]
+name = "teamnl-bescherming-achteraf"
+type = "post_tool"
+command = "python .agents/hooks/bescherm-gevoelige-data.py --agent vibe"
+timeout = 30.0
+strict = true
+description = "Maskeert herkenbare persoonsnummers in de uitvoer."

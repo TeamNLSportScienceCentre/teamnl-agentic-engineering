@@ -1,0 +1,22 @@
+# Regeleindes: Git normaliseert tekst; scripts houden het formaat van hun systeem
+* text=auto
+*.sh  text eol=lf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Binaire bestanden nooit als tekst behandelen
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.ttf  binary
+*.woff binary
+*.woff2 binary
+*.xlsx binary
+*.pptx binary
+*.docx binary
+*.zip  binary
