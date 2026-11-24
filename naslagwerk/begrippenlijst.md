@@ -54,7 +54,7 @@ Altijd bij de hand. Ook als printversie in het overzicht (pdf).
 |---|---|
 | `README.md` | Uitleg voor mensen: wat doet het, hoe start je het? |
 | `AGENTS.md` / `CLAUDE.md` | Werkafspraken voor je agent |
-| `plan-van-aanpak.md` | Doel, aanpak, data en structuur (uit de intake-skill) |
+| `plan-van-aanpak.md` | Doel, aanpak, data en structuur (uit de TeamNL-skill) |
 | `.gitignore` | Wat git moet negeren, zoals `.env` en `data/private/` |
 | `.env` / `.env.example` | Lokale instellingen en geheimen / het voorbeeld zonder echte waarden |
 | `.venv` / `requirements.txt` | Eigen Python-omgeving (niet in git) / lijst met benodigde packages |

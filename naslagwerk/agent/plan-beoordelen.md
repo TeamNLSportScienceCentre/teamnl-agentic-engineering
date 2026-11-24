@@ -10,7 +10,7 @@ moeilijkheid: 2
 Je hoeft niet alle technieken te kennen om een plan te beoordelen: toets het aan je doel, je grenzen en de vraag hoe je weet dat het werkt.
 
 ## Waarom
-De intake-skill maakt een `plan-van-aanpak.md`. Maar hoe weet je of dat plan goed is als je de alternatieven niet kent? En een agent denkt soms maar één kant op. Met vaste vragen en een tweede mening maak je het plan toch beoordeelbaar.
+De TeamNL-skill (`teamnl-agentic-engineering-skill`) maakt een `plan-van-aanpak.md`. Maar hoe weet je of dat plan goed is als je de alternatieven niet kent? En een agent denkt soms maar één kant op. Met vaste vragen en een tweede mening maak je het plan toch beoordeelbaar.
 
 ## Wanneer wel, wanneer (nog) niet
 Bij de start van een project en bij elke grotere feature. Voor een kleine aanpassing is dit te zwaar.
